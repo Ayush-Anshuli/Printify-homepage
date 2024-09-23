@@ -39,7 +39,6 @@ const Navbar = () => {
     <>
       <Container maxW={"1400px"} mt={2} mb={2}>
         <HStack display={"flex"} justifyContent={"space-between"}>
-          {/* Hamburger Menu Icon for Mobile */}
           <IconButton
             display={{ base: "block", md: "none" }}
             icon={<HamburgerIcon />}
@@ -48,12 +47,11 @@ const Navbar = () => {
             variant="outline"
           />
 
-          {/* Logo */}
           <HStack>
             <Image src={logo} h={10} />
           </HStack>
 
-          {/* Desktop Menu Links */}
+          
           <HStack spacing={10} display={{ base: "none", md: "flex" }}>
             <Text color={'gray'}>Catalog</Text>
             <Menu isOpen={ishoverworks}>
@@ -112,7 +110,7 @@ const Navbar = () => {
             </Menu>
           </HStack>
 
-          {/* Log in and Sign Up Buttons */}
+          
           <HStack display={{ base: "none", md: "flex" }}>
             <Button>Log in</Button>
             <Button color={"white"} bg={"#39b75d"}>Sign up</Button>
@@ -121,7 +119,7 @@ const Navbar = () => {
       </Container>
       <hr />
 
-      {/* Drawer for Mobile Menu */}
+      
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
@@ -133,7 +131,7 @@ const Navbar = () => {
               <Text>Pricing</Text>
               <Text>Blog</Text>
               
-              {/* Accordion for Mobile Dropdown Menus */}
+              
               <Accordion allowToggle width="100%">
                 <AccordionItem>
                   <AccordionButton>

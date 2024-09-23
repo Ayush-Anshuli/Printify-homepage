@@ -10,7 +10,6 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Feedback = () => {
@@ -58,21 +57,18 @@ const Feedback = () => {
         prevArrow: <CustomPrevArrow />,
     };
 
-    // GSAP Animation Refs
     const textLeftRef = useRef(null);
     const textRightRef = useRef(null);
-    const carouselRef = useRef(null); // New ref for the whole carousel
-
+    const carouselRef = useRef(null); 
     useEffect(() => {
-        // Animate both texts: one from left, one from right on scroll
         gsap.fromTo(
             textLeftRef.current,
-            { opacity: 0, x: -100 }, // Start from the left
+            { opacity: 0, x: -100 }, 
             {
                 opacity: 1, x: 0, duration: 1.2, ease: "power3.out",
                 scrollTrigger: {
-                    trigger: textLeftRef.current, // Trigger animation when this element enters the viewport
-                    start: "top 80%", // Adjust based on when you want the animation to start
+                    trigger: textLeftRef.current, 
+                    start: "top 80%", 
                     toggleActions: "play none none none"
                 }
             }
@@ -80,26 +76,26 @@ const Feedback = () => {
 
         gsap.fromTo(
             textRightRef.current,
-            { opacity: 0, x: 100 }, // Start from the right
+            { opacity: 0, x: 100 }, 
             {
                 opacity: 1, x: 0, duration: 1.2, ease: "power3.out", delay: 0.3,
                 scrollTrigger: {
                     trigger: textRightRef.current,
-                    start: "top 80%", // Start the animation when the top of the element hits 80% of the viewport height
+                    start: "top 80%", 
                     toggleActions: "play none none none"
                 }
             }
         );
 
-        // Animate the whole carousel from the bottom when it scrolls into view
+        
         gsap.fromTo(
             carouselRef.current,
-            { opacity: 0, y: 100 }, // Start from below the viewport
+            { opacity: 0, y: 100 }, 
             {
                 opacity: 1, y: 0, duration: 1.5, ease: "power3.out",
                 scrollTrigger: {
-                    trigger: carouselRef.current, // Trigger animation when the carousel enters the viewport
-                    start: "top 85%", // Start when the top of the carousel hits 85% of the viewport
+                    trigger: carouselRef.current, 
+                    start: "top 85%", 
                     toggleActions: "play none none none"
                 }
             }
@@ -110,14 +106,14 @@ const Feedback = () => {
         <Container maxW={"100%"} bg={"#f7f7f7"} mb={10} mt={"150px"}>
             <Container maxW={"container.xl"} mb={12}>
                 <HStack display={"flex"} gap={"50px"} mb={12} flexDirection={["column", "row"]}>
-                    {/* Left Text - From Left Animation */}
+                    
                     <HStack mt={["50px", "100px", "150px"]} ref={textLeftRef}>
                         <Text fontSize={["2xl", "1.5rem", "2.5rem"]} mt={12} fontWeight={"bold"} textAlign={["center", "left"]}>
                             Trusted by over 8M sellers around the world
                         </Text>
                     </HStack>
 
-                    {/* Right Text - From Right Animation */}
+                    
                     <HStack mt={["20px", "50px", "150px"]} ref={textRightRef}>
                         <Text p={5} w={["100%", "400px"]} color={"gray"} fontWeight={"bold"} textAlign={["center", "left"]}>
                             Whether you are just getting started or run an enterprise-level e-commerce business, we do everything we can to ensure a positive merchant experience.
@@ -125,7 +121,7 @@ const Feedback = () => {
                     </HStack>
                 </HStack>
 
-                {/* Carousel section - Apply animation on scroll */}
+                
                 <Box ref={carouselRef}>
                     <Slider {...settings}>
                         {slidCrawsel.map((item) => (

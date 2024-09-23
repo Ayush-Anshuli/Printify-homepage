@@ -4,25 +4,24 @@ import Cointree from "../assets/Cointree.png";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Payment = () => {
-  const boxRef = useRef(null); // Ref for the box
-  const imageRef = useRef(null); // Ref for the image
+  const boxRef = useRef(null); 
+  const imageRef = useRef(null); 
 
   useEffect(() => {
     gsap.fromTo(
       boxRef.current,
-      { opacity: 0, x: 100 }, // Start from the right
+      { opacity: 0, x: 100 }, 
       {
         opacity: 1,
         x: 0,
-        duration: 2, // Increase duration for a slower animation
+        duration: 2, 
         ease: "power3.out",
         scrollTrigger: {
           trigger: boxRef.current,
-          start: "top 80%", // Start the animation when the top of the box hits 80% of the viewport
+          start: "top 80%", 
           toggleActions: "play none none none"
         }
       }
@@ -33,9 +32,8 @@ const Payment = () => {
     <>
       <Container maxW={"container.xl"} mt={{ base: "50px", md: "150px" }} mb={{ base: "50px", md: "120px" }} p={{ base: 5, md: 10 }}>
         <HStack display={"flex"} justifyContent={"center"} gap={"0px"} flexWrap={"wrap"}>
-          {/* Box for Payment Info */}
           <Box
-            ref={boxRef} // Attach ref for animation
+            ref={boxRef} 
             bg={"#203741"}
             borderRadius={"20px"}
             p={{ base: 10, md: 20 }}
@@ -107,7 +105,6 @@ const Payment = () => {
             </HStack>
           </Box>
 
-          {/* Image Section */}
           <HStack
             display={{ base: "none", lg: "flex" }}
             flexBasis={{ base: "100%", lg: "50%" }}

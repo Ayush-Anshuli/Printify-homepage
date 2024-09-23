@@ -10,7 +10,6 @@ import pritishirt from "../assets/pritishirt.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const CustomNextArrow = (props) => {
@@ -47,50 +46,49 @@ const CustomPrevArrow = (props) => {
 
 const Design = () => {
   useEffect(() => {
-    // GSAP animation for cards coming from the left on scroll
     const cards = gsap.utils.toArray(".card");
     cards.forEach((card, index) => {
       gsap.fromTo(
         card,
         {
-          x: -100, // Start from the left
-          opacity: 0, // Hidden before scroll
+          x: -100, 
+          opacity: 0, 
         },
         {
-          x: 0, // Move to original position
-          opacity: 1, // Fade in
-          duration: 0.5, // Animation duration
-          ease: "power3.out", // Smooth easing
+          x: 0, 
+          opacity: 1, 
+          duration: 0.5, 
+          ease: "power3.out", 
           scrollTrigger: {
             trigger: card,
-            start: "top 80%", // Start when the top of the element is at 80% of the viewport
-            toggleActions: "play none none none", // Play once, no reverse
+            start: "top 80%", 
+            toggleActions: "play none none none", 
             stagger: {
-              amount: 0.2, // Delay for each card
-              from: "start", // Start staggering from the first card
+              amount: 0.2, 
+              from: "start", 
             },
           },
         }
       );
     });
 
-    // GSAP animation for text coming from the bottom
+    
     gsap.utils.toArray(".animated-text").forEach((text) => {
       gsap.fromTo(
         text,
         {
-          y: 50, // Start from below
-          opacity: 0, // Hidden before scroll
+          y: 50, 
+          opacity: 0, 
         },
         {
-          y: 0, // Move to original position
-          opacity: 1, // Fade in
-          duration: 2, // Animation duration
-          ease: "power3.out", // Smooth easing
+          y: 0, 
+          opacity: 1, 
+          duration: 2, 
+          ease: "power3.out", 
           scrollTrigger: {
             trigger: text,
-            start: "top 80%", // Start when the top of the element is at 80% of the viewport
-            toggleActions: "play none none none", // Play once, no reverse
+            start: "top 80%", 
+            toggleActions: "play none none none", 
           },
         }
       );
@@ -226,7 +224,7 @@ const Design = () => {
               name={item.name}
               title={item.title}
               desc={item.desc}
-              className="card" // Add class for GSAP targeting
+              className="card" 
             />
           ))}
         </HStack>

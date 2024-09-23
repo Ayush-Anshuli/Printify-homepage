@@ -10,7 +10,6 @@ const Footer = () => {
   return (
     <>
       <Container maxW={"container.xl"} py={4}>
-        {/* Top Section */}
         <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={4} m={2} mb={8}>
           <GridItem>
             <Image src={logo} h={10} mx={{ base: "auto", md: "0" }} />
@@ -26,13 +25,11 @@ const Footer = () => {
           </GridItem>
         </Grid>
 
-        {/* Links Section */}
         <Grid
           templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
           gap={8}
           mt={8}
         >
-          {/* Column 1 */}
           <GridItem>
             <VStack alignItems={"flex-start"} spacing={2}>
               <Text color={"black"} fontWeight={"bold"}>
@@ -51,7 +48,6 @@ const Footer = () => {
             </VStack>
           </GridItem>
 
-          {/* Column 2 */}
           <GridItem>
             <VStack alignItems={"flex-start"} spacing={2}>
               <Text color={"black"} fontWeight={"bold"}>
@@ -70,7 +66,6 @@ const Footer = () => {
             </VStack>
           </GridItem>
 
-          {/* Column 3 */}
           <GridItem>
             <VStack alignItems={"flex-start"} spacing={2}>
               <Text color={"black"} fontWeight={"bold"}>
@@ -89,7 +84,6 @@ const Footer = () => {
             </VStack>
           </GridItem>
 
-          {/* Column 4 */}
           <GridItem>
             <VStack alignItems={"flex-start"} spacing={2}>
               <Text color={"black"} fontWeight={"bold"}>
@@ -110,7 +104,6 @@ const Footer = () => {
         </Grid>
       </Container>
 
-      {/* Bottom Section */}
       <Container maxW={"100%"} bg={"#f7f7f7"} color={"gray"} p={6} mt={16}>
         <Center>
           <Grid

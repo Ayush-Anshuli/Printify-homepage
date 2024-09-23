@@ -48,7 +48,7 @@ const CardDetails = ({ img, title, desc }) => {
             pb={5} 
             mb={10} 
             textAlign="center" 
-            width={{ base: "100%", sm: "45%", md: "30%" }} // Adjust card width for responsiveness
+            width={{ base: "100%", sm: "45%", md: "30%" }} 
         >
             <Image src={img} 
                    h={{ base: "100px", md: "150px" }} 
@@ -69,7 +69,7 @@ const CardDetails = ({ img, title, desc }) => {
                 <Text 
                     fontWeight={"500"} 
                     color={"#737373"} 
-                    fontSize={{ base: "0.9rem", md: "1rem" }} // Adjust font size for smaller screens
+                    fontSize={{ base: "0.9rem", md: "1rem" }} 
                 >
                     {desc}
                 </Text>

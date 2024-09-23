@@ -19,7 +19,6 @@ const Connect = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animation for the center image
     gsap.fromTo(centerImageRef.current, 
       { opacity: 0, scale: 0.5 }, 
       { 
@@ -35,7 +34,6 @@ const Connect = () => {
       }
     );
 
-    // Animations for surrounding images
     surroundingImageRefs.current.forEach((image, index) => {
       gsap.fromTo(image, 
         { opacity: 0, y: 100 }, 
@@ -48,13 +46,12 @@ const Connect = () => {
             trigger: image,
             start: "top 80%",
             once: true,
-            delay: index * 0.1 // Staggered effect
+            delay: index * 0.1 
           }
         }
       );
     });
 
-    // Animation for the bird image
     gsap.fromTo(surroundingImageRefs.current[6], 
       { opacity: 0, y: 100 }, 
       { 
@@ -83,7 +80,6 @@ const Connect = () => {
       </Center>
 
       <Center position="relative" h="500px" flexWrap="wrap">
-        {/* Center image */}
         <Image
           ref={centerImageRef}
           className="center-image"
@@ -98,7 +94,6 @@ const Connect = () => {
           transform="translate(-50%, -50%)"
         />
 
-        {/* Surrounding images */}
         <Image
           ref={el => surroundingImageRefs.current[0] = el}
           className="image-item"
@@ -159,16 +154,15 @@ const Connect = () => {
           right={{ base: "5%", md: "30%" }}
         />
 
-        {/* Bird image positioned away from the center */}
         <Image
-          ref={el => surroundingImageRefs.current[6] = el} // Add the bird image to the refs
+          ref={el => surroundingImageRefs.current[6] = el} 
           className="image-item"
           src={Bird}
-          h={{ base: "40px", md: "50px" }} // Set responsive height
-          w={{ base: "40px", md: "50px" }} // Set responsive width
+          h={{ base: "40px", md: "50px" }} 
+          w={{ base: "40px", md: "50px" }} 
           position="absolute"
-          top={{ base: "40%", md: "50%" }} // Position it higher for smaller screens
-          left={{ base: "80%", md: "90%" }} // Position it further to the right
+          top={{ base: "40%", md: "50%" }} 
+          left={{ base: "80%", md: "90%" }} 
         />
       </Center>
       <Container mt={{ base: "100px", md: "200px" }} p={0} maxW="container.xl" position="relative">
@@ -188,9 +182,9 @@ const Connect = () => {
     spacing={{ base: 4, md: 8 }} 
     flexDirection={{ base: "column", md: "row" }} 
     alignItems={{ base: "center", md: "flex-start" }} 
-    bg="rgba(255, 255, 255, 0.8)" // Optional: background for better readability
-    p={4} // Optional: padding
-    borderRadius="25px" // Optional: match the image border radius
+    bg="rgba(255, 255, 255, 0.8)" 
+    p={4} 
+    borderRadius="25px" 
   >
     <Text 
       fontWeight="bold" 
